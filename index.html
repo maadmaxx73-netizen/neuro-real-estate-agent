@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; URL=/public/index.html" />
-  <title>Neuro Real Estate Agent</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro Real Estate Agent</title>
 </head>
 <body>
-  <p>Redirecting to <a href="/public/index.html">Neuro Real Estate Agent</a>...</p>
+    <script>
+        fetch('/public/index.html')
+            .then(response => response.text())
+            .then(html => {
+                // fix relative paths for CSS and JS
+                html = html.replace(/href="style\\.css"/g, 'href="/style.css"');
+                html = html.replace(/src="app\\.js"/g, 'src="/app.js"');
+                document.open();
+                document.write(html);
+                document.close();
+            });
+    </script>
 </body>
 </html>
