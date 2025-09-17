@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro Real Estate Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Neuro Real Estate Agent</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#affordability">Affordability</a></li>
+                    <li><a href="#agents">Agents</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#fsbo">FSBO</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>AI-Powered Real Estate Solutions for Philadelphia</h2>
+            <p>Discover your dream home with personalized recommendations, affordability analysis, and direct connections to top agents.</p>
+            <button class="btn" onclick="toggleChat()">Start Chat Now</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('affordability').scrollIntoView({behavior: 'smooth'})">See How Much You Can Afford</button>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>Why Choose Neuro Real Estate Agent</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Connect With Top Agents</h3>
+                    <p>We connect you with the best real estate agents in Philadelphia based on your needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Affordability Calculator</h3>
+                    <p>Use our AI-powered calculator to see how much home you can afford.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multiple Lenders & Brokers</h3>
+                    <p>Access multiple lenders and brokerages to assist with your mortgage needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pre-Approvals</h3>
+                    <p>Get pre-approved quickly through our network of trusted lenders.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Direct Contact</h3>
+                    <p>Communicate directly with sellers and buyers for faster transactions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>For Sale By Owner</h3>
+                    <p>List FSBO properties directly through our platform to reach buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="affordability">
+        <div class="container">
+            <h2>How Much Home Can You Afford?</h2>
+            <div class="affordability-calculator">
+                <p>Enter your financial details to determine your maximum affordable home price.</p>
+                <div class="form-group">
+                    <label for="annualIncome">Annual Gross Income ($)</label>
+                    <input type="number" id="annualIncome" value="100000">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="monthlyDebts">Monthly Debt Payments ($)</label>
+                        <input type="number" id="monthlyDebts" value="1500">
+                    </div>
+                    <div class="form-group">
+                        <label for="downPayment">Down Payment (% or $)</label>
+                        <select id="downPaymentType">
+                            <option value="percent">Percentage (%)</option>
+                            <option value="amount">Amount ($)</option>
+                        </select>
+                        <input type="number" id="downPayment" value="20">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="interestRate">Estimated Interest Rate (%)</label>
+                        <input type="number" id="interestRate" value="6.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTerm">Loan Term (years)</label>
+                        <select id="loanTerm">
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn" onclick="calculateAffordability()">Calculate My Affordability</button>
+                <div class="calc-result" id="affordabilityResult">$750,000</div>
+            </div>
+        </div>
+    </section>
+    <section id="agents">
+        <div class="container">
+            <h2>Top Real Estate Agents in Philadelphia</h2>
+            <div class="agent-grid">
+                <div class="agent-card">
+                    <div class="agent-info">
+                        <div class="agent-name">Sarah Johnson</div>
+                        <div class="agent-brokerage">Realty Group Philadelphia</div>
+                        <p>Specializes in luxury homes in Center City and Rittenhouse</p>
+                        <div class="agent-contact">
+                            <a href="tel:+12155550123">(215) 555-0123</a>
+                            <a href="mailto:sarah@realtygroupphilly.com">Email</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-info">
+                        <div class="agent-name">Michael Rodriguez</div>
+                        <div class="agent-brokerage">Philadelphia Homes Inc.</div>
+                        <p>Expert in first-time buyer programs and FHA loans</p>
+                        <div class="agent-contact">
+                            <a href="tel:+12155550456">(215) 555-0456</a>
+                            <a href="mailto:michael@philahomes.com">Email</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-info">
+                        <div class="agent-name">Lisa Chen</div>
+                        <div class="agent-brokerage">Urban Living Realty</div>
+                        <p>Specializes in condos and townhomes throughout South Philly</p>
+                        <div class="agent-contact">
+                            <a href="tel:+12155550789">(215) 555-0789</a>
+                            <a href="mailto:lisa@urbanliving.com">Email</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-info">
+                        <div class="agent-name">David Thompson</div>
+                        <div class="agent-brokerage">North Philly Specialists</div>
+                        <p>Expert in investment properties and multi-unit buildings</p>
+                        <div class="agent-contact">
+                            <a href="tel:+12155550111">(215) 555-0111</a>
+                            <a href="mailto:david@northphilly.com">Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="properties">
+        <div class="container">
+            <h2>Featured Philadelphia Properties</h2>
+            <div class="property-grid">
+                <div class="property-card">
+                    <div class="property-info">
+                        <div class="property-price">$425,000</div>
+                        <div class="property-address">123 Chestnut St, Philadelphia, PA 19107</div>
+                        <div class="property-details">
+                            <span>3 Beds</span>
+                            <span>2 Baths</span>
+                            <span>1,850 sqft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-info">
+                        <div class="property-price">$589,000</div>
+                        <div class="property-address">456 Walnut St, Philadelphia, PA 19103</div>
+                        <div class="property-details">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>2,400 sqft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-info">
+                        <div class="property-price">$375,000</div>
+                        <div class="property-address">789 Broad St, Philadelphia, PA 19123</div>
+                        <div class="property-details">
+                            <span>2 Beds</span>
+                            <span>2 Baths</span>
+                            <span>1,600 sqft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="fsbo">
+        <div class="container">
+            <h2>For Sale By Owner (FSBO)</h2>
+            <div class="fsbo-section">
+                <h3>List Your Property Without Commission Fees</h3>
+                <p>Reach thousands of potential buyers through our platform. Our AI assistant will help you create professional listings and connect with interested buyers.</p>
+                <form class="fsbo-form">
+                    <div class="form-group">
+                        <label for="fsboName">Your Full Name</label>
+                        <input type="text" id="fsboName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fsboEmail">Email Address</label>
+                        <input type="email" id="fsboEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fsboPhone">Phone Number</label>
+                        <input type="tel" id="fsboPhone" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fsboAddress">Property Address</label>
+                            <input type="text" id="fsboAddress" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fsboPrice">Asking Price ($)</label>
+                            <input type="number" id="fsboPrice" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fsboBeds">Bedrooms</label>
+                            <input type="number" id="fsboBeds" value="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="fsboBaths">Bathrooms</label>
+                            <input type="number" id="fsboBaths" value="2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fsboDescription">Property Description</label>
+                        <textarea id="fsboDescription" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit FSBO Listing</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <h3>Neuro AI Assistant</h3>
+            <span id="closeChat">&times;</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">Hello! I'm your Neuro AI Real Estate Assistant for Philadelphia homes. I can connect you with top agents, calculate your affordability, help with FSBO listings, and get you pre-approved. How can I help you today? 😊</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message here..." autocomplete="off">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+    <div class="chat-toggle" id="chatToggle">💬</div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Neuro Real Estate Agent. All rights reserved. | Philadelphia, PA</p>
+            <p>Powered by Advanced AI Technology for Seamless Real Estate Experience</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
